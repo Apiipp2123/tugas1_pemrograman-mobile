@@ -8,6 +8,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
+import android.content.Intent;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         EditText etNama = findViewById(R.id.main_nama);
         ImageButton btnReset = findViewById(R.id.main_btn_reset);
         CheckBox cbCeklis = findViewById(R.id.main_cb_Ceklis);
+        Button btnSumbit2 = findViewById(R.id.main_btn_submit2);
 
         btnSubmit.setOnClickListener(v -> {
             String namaPengguna = etNama.getText().toString();
@@ -42,6 +44,10 @@ public class MainActivity extends AppCompatActivity {
             etNama.setText("");
 //            etNama.setError(null);
 //            etNama.requestFocus();
+        });
+        btnSumbit2.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+            startActivity(intent);
         });
     }
 }
